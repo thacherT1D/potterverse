@@ -17,11 +17,11 @@ router.get('/characters', function(req, res) {
   });
 });
 
-router.get('/characters', function(req, res) {
-  hogwarts_houses().select().then(function(results){
-  res.render('characters/index', {hogwarts_houses: results});
-  });
-});
+// router.get('/characters', function(req, res) {
+//   hogwarts_houses().select().then(function(results){
+//   res.render('characters/index', {hogwarts_houses: results});
+//   });
+// });
 
 router.get('/characters/menu', (req, res) => {
   characters().select().then(function(results){
