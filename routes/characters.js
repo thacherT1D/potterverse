@@ -47,4 +47,13 @@ router.get('/characters/:id', function(req, res, next) {
   });
 });
 
+router.get('/characters/:id/update', function(req, res, next) {
+  characters().where({'c_id': req.params.id}).then(function (results) {
+    return knex('characters').then(function() {
+      res.render('characters/update', {character: results});
+    });
+  });
+});
+
+
 module.exports = router;
