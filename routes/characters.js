@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var knex = require('../db/knex');
-
+var knex = require('knex')({
+    client: 'pg',
+    connection: process.env.DATABASE_URL
+  });
+  
 function characters() {
   return knex('characters');
 }
