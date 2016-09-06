@@ -55,5 +55,20 @@ router.get('/characters/:id/update', function(req, res, next) {
   });
 });
 
+router.put('/characters/:id/update', function(req, res, next) {
+  characters().where({c_id: req.params.id})
+  .update({
+    c_first: req.body.c_first,
+    c_last: req.body.c_last,
+    c_house: req.body.c_house,
+    c_desc: req.body.c_desc
+  }).then(function () {
+      res.redirect('/characters');
+  });
+});
+
+
+
+
 
 module.exports = router;

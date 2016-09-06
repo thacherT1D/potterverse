@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= potterverse
+
+    link(rel='stylesheet', href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js")
+    link(rel='stylesheet', href="//fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    nav.navbar-fixed blue-grey darken-2(role='navigation')
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/cadets') Star Trekkies
+            li
+              a(href='#')
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/cadets') Cadets
+    block content
