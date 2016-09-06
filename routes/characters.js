@@ -23,6 +23,10 @@ router.get('/characters', function(req, res) {
 //   });
 // });
 
+router.get('/characters/new', function(req, res) {
+  res.render('characters/new');
+});
+
 router.post('/characters', function(req, res) {
   var newCharacter = {
     c_first: req.body.c_first,
@@ -33,11 +37,14 @@ router.post('/characters', function(req, res) {
   characters().insert(newCharacter).then(function(result){
     res.redirect('/characters');
   });
-
 });
 
-router.get('/characters/new', function(req, res) {
-    res.render('characters/new');
+router.get('/characters/:id', function(req, res, next) {
+  characters().where({'c_id': req.params.id}).then(function (results) {
+    return knex('characters').then(function() {
+      res.render('characters/detail', {character: results});
+    });
+  });
 });
 
 module.exports = router;
