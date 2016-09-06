@@ -17,7 +17,16 @@
           <td> {{c_first}} {{c_last}} </td>
           <td> {{c_house}} </td>
           <td> {{c_desc}} </td>
-          <td> <i class="tiny material-icons">mode_edit</i> </td>
+          <td>
+            <a href="/characters/{{c_id}}/update">
+              <i class="tiny material-icons">mode_edit</i>
+            </a>
+          </td>
+          <td>
+            <form action="/characters/{{c_id}}?_method=delete" method="post">
+              <button type="submit" value="delete">delete</button>
+            </form>
+          </td>
         </tr>
         {{/each}}
       </tbody>

@@ -67,8 +67,10 @@ router.put('/characters/:id/update', function(req, res, next) {
   });
 });
 
-
-
-
+router.delete('/characters/:id', function(req, res, next) {
+  characters().del().where({c_id: req.params.id}).then(function () {
+    res.redirect('/characters');
+  });
+});
 
 module.exports = router;
