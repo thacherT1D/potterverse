@@ -1,3 +1,5 @@
+require('dotenv').load({silent: true});
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -8,6 +10,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var characters = require('./routes/characters');
 var data = require('./routes/data');
+
+var methodOverride = require('method-override');
 
 var app = express();
 
@@ -22,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', routes);
 app.use('/', characters);
