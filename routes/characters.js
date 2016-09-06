@@ -7,9 +7,9 @@ function characters() {
   return knex('characters');
 }
 
-function hogwarts_houses() {
-  return knex('hogwarts_houses');
-}
+// function hogwarts_houses() {
+//   return knex('hogwarts_houses');
+// }
 
 router.get('/characters', function(req, res) {
   characters().select().then(function(results){
@@ -23,20 +23,17 @@ router.get('/characters', function(req, res) {
 //   });
 // });
 
-router.get('/characters/data', (req, res) => {
-  characters().select().then(function(results){
-    var characterResults = {characters: results};
-    var jsonCharacterResults = JSON.stringify(characterResults);
-    res.send(jsonCharacterResults);
+router.post('/characters', function(req, res) {
+  var newCharacter = {
+    c_first: req.body.c_first,
+    c_last: req.body.c_last,
+    c_house: req.body.c_house,
+    c_desc: req.body.c_desc
+  }
+  characters().insert(newCharacter).then(function(result){
+    res.redirect('/characters');
   });
-});
 
-router.get('/characters/housedata', (req, res) => {
-  hogwarts_houses().select().then(function(results){
-    var houseResults = {houses: results};
-    var jsonHouseResults = JSON.stringify(houseResults);
-    res.send(jsonHouseResults);
-  });
 });
 
 router.get('/characters/new', function(req, res) {
