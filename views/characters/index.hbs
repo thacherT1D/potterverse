@@ -1,16 +1,22 @@
-<div class='row'>
+<div class='container row'>
   <div class="col s12">
-    <h4 id="test">Characters Basic Information</h3>
-    <p>This information can be called from: '/characters/menu'</p>
-    <hr>
-    {{#each characters}}
-    <p>{{c_first}} {{c_last}}</p>
-    {{/each}}
+    <h4 id="test">Character Information</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>House</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each characters}}
+        <tr>
+          <td> {{c_first}} {{c_last}} </td>
+          <td> {{c_house}} </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
-  <div>
-    {{#each hogwarts_houses}}
-      {{house_name}}
-    {{/each}}
-  </div>
-  <!-- <img src="http://goo.gl/sSzrWz"></> -->
 </div>

@@ -11,9 +11,9 @@ function hogwarts_houses() {
   return knex('hogwarts_houses');
 }
 
-// router.get('/data', function(req, res) {
-//   res.render('data/index');
-// });
+router.get('/data', function(req, res, next) {
+  res.render('data/index');
+});
 
 router.get('/data/characters', (req, res) => {
   characters().select().then(function(results){
