@@ -15,11 +15,14 @@ exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
     knex('characters').del()
     .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('characters').insert({c_first: 'Harry', c_last: 'Potter', c_house: 'Gryffindor', c_desc: 'Main Protagonist'}),
-        knex('characters').insert({c_first: 'Hermione', c_last: 'Granger', c_house: 'Gryffindor', c_desc: 'Smartest Person Ever'})
-      ]);
+      return knex.raw('ALTER SEQUENCE characters_c_id_seq restart with 3').then(function() {
+        return Promise.all([
+          // Inserts seed entries
+          knex('characters').insert({c_id: 1, c_first: 'Hermione', c_last: 'Granger', c_house: 'Gryffindor', c_desc: 'Smartest Person Ever'}),
+          knex('characters').insert({c_id: 2, c_first: 'Harry', c_last: 'Potter', c_house: 'Gryffindor', c_desc: 'Main Protagonist'})
+        ]);
+
+      });
     })
   ]);
 };
