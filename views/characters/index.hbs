@@ -18,16 +18,21 @@
           <td> {{c_house}} </td>
           <td> {{c_desc}} </td>
           <td>
-            <a href="/characters/{{c_id}}/update">
+            <a class="btn" href="/characters/{{c_id}}/update">
               <i class="tiny material-icons">mode_edit</i>
             </a>
           </td>
           <td>
             <form action="/characters/{{c_id}}?_method=delete" method="post">
-              <a class="btn" type="submit" value="delete">
+              <button class="btn" type="submit" value="delete">
                 <i class="tiny material-icons">delete</i>
-              </a>
+              </button>
             </form>
+          </td>
+          <td>
+            <a class="btn" href="/characters/{{c_id}}/">
+              <i class="tiny material-icons">info</i>
+            </a>
           </td>
         </tr>
         {{/each}}
