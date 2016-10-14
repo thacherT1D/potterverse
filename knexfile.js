@@ -4,7 +4,7 @@ module.exports = {
     connection: 'postgres://localhost/potterverse'
   },
   production: {
-  client: 'pg',
-  connection: process.env.DATABASE_URL
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   }
 };
