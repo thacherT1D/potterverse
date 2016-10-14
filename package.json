@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "heroku-postbuild": "knex migrate:latest",
+    "knex": "knex",
+    "lint": "eslint .",
+    "nf": "nf start",
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
