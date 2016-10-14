@@ -5,14 +5,14 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.disable('x-powered-by');
 
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 
 switch (app.get('env')) {
   case 'development':
@@ -29,7 +29,7 @@ switch (app.get('env')) {
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-var path = require('path');
+const path = require('path');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -37,13 +37,11 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-var routes = require('./routes/index');
-var characters = require('./routes/characters');
-var data = require('./routes/data');
+const routes = require('./routes/index');
+const data = require('./routes/data');
 
-app.use('/', routes);
-app.use('/', characters);
-app.use('/', data);
+app.use(routes);
+app.use(data);
 
 app.use((_req, res) => {
   res.sendStatus(404);
