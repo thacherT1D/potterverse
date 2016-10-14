@@ -1,27 +1,20 @@
 exports.seed = function(knex, Promise) {
   return Promise.all ([
-    knex('hogwarts_houses').del()
-    .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('hogwarts_houses').insert({house_id: 1, house_name: 'Gryffindor'}),
-        knex('hogwarts_houses').insert({house_id: 2, house_name: 'Hufflepuff'}),
-        knex('hogwarts_houses').insert({house_id: 3, house_name: 'Ravenclaw'}),
-        knex('hogwarts_houses').insert({house_id: 4, house_name: 'Slytherin'}),
-        knex('hogwarts_houses').insert({house_id: 5, house_name: 'Unknown'}),
-        knex('hogwarts_houses').insert({house_id: 6, house_name: 'Did Not Attend Hogwarts'})
-      ]);
-    }),
-    // Deletes ALL existing entries
     knex('characters').del()
     .then(function () {
-      return knex.raw('ALTER SEQUENCE characters_c_id_seq restart with 3').then(function() {
+      return knex.raw('ALTER SEQUENCE id restart with 11').then(function() {
         return Promise.all([
-          // Inserts seed entries
-          knex('characters').insert({c_id: 1, c_first: 'Hermione', c_last: 'Granger', c_house: 'Gryffindor', c_desc: 'Smartest Person Ever'}),
-          knex('characters').insert({c_id: 2, c_first: 'Harry', c_last: 'Potter', c_house: 'Gryffindor', c_desc: 'Main Protagonist'})
+          knex('characters').insert({id: 1, firstName: 'Harry', lastName: 'Potter', middleName: 'James', parents:['James Potter', 'Lily Potter'], born: '1980-07-31T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Stag', bloodStatus: 'Half-blood', imageUrl: 'http://i.imgur.com/lX3lE9V.jpg'}),
+          knex('characters').insert({id: 2, firstName: 'Hermione', lastName: 'Granger', middleName: 'Jean', parents:['Mr. Granger', 'Mrs. Granger'], born: '1979-09-19T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Otter', bloodStatus: 'Muggle-born', imageUrl: 'http://i.imgur.com/kvexDei.jpg'}),
+          knex('characters').insert({id: 3, firstName: 'Ron', lastName: 'Weasley', middleName: 'Bilius', parents:['Molly Weasley', 'Arthur Weasley'], born: '1980-03-01T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Jack Russell Terrier', bloodStatus: 'Pure-blood', imageUrl: 'http://i.imgur.com/rY7RSAc.jpg'}),
+          knex('characters').insert({id: 4, firstName: 'Ginny', lastName: 'Weasley', middleName: 'Molly', parents:['Molly Weasley', 'Arthur Weasley'], born: '1981-08-11T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Horse', bloodStatus: 'Pure-blood', imageUrl: 'http://i.imgur.com/YO9CWSl.jpg'}),
+          knex('characters').insert({id: 5, firstName: 'Luna', lastName: 'Lovegood', middleName: '', parents:['Xenophilius Lovegood', 'Pandora Lovegood'], born: '1981-02-13T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Ravenclaw', patronous: 'Hare', bloodStatus: 'Pure-blood', imageUrl: 'http://i.imgur.com/11GYGVT.jpg'}),
+          knex('characters').insert({id: 6, firstName: 'Neville', lastName: 'Longbottom', middleName: '', parents:['Alice Longbottom', 'Frank Longbottom'], born: '1980-07-30T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Non-corporeal', bloodStatus: 'Pure-blood', imageUrl: 'http://i.imgur.com/naqfkln.jpg'}),
+          knex('characters').insert({id: 7, firstName: 'Dean', lastName: 'Thomas', middleName: '', parents:['', ''], born: '1980-01-01T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: '', bloodStatus: 'Half-blood', imageUrl: 'http://i.imgur.com/l87Gqdk.jpg'}),
+          knex('characters').insert({id: 8, firstName: 'Seamus', lastName: 'Finnigan', middleName: '', parents:['Mr. Finnigan', 'Mrs. Finnigan'], born: '1980-01-01T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Fox', bloodStatus: 'Half-blood', imageUrl: 'http://i.imgur.com/dXRY0lC.jpg'}),
+          knex('characters').insert({id: 9, firstName: 'Albus', lastName: 'Dumbledore', middleName: 'Percival Wulfric Brian', parents:['Percival Dumbledore', 'Kendra Dumbledore'], born: '1981-06-01T00:00:00.000Z', died: '1997-06-30T00:00:00.000Z', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Phoenix', bloodStatus: 'Half-blood', imageUrl: 'http://i.imgur.com/G0mKTxy.jpg'}),
+          knex('characters').insert({id: 10, firstName: 'Minerva', lastName: 'McGonnagal', middleName: '', parents:['Robert McGonnagal', 'Isobel Ross'], born: '1935-10-04T00:00:00.000Z', died: '', school: 'Hogwarts', house: 'Gryffindor', patronous: 'Phoenix', bloodStatus: 'Half-blood', imageUrl: 'http://i.imgur.com/sjgazI7.jpg'})
         ]);
-
       });
     })
   ]);
