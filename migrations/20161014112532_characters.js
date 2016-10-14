@@ -1,23 +1,23 @@
-exports.up = function(knex, Promise) {
-  return Promise.all([
+'use strict';
 
-    knex.schema.createTable('characters', function(table) {
-      table.increments('id');
-      table.string('firstName');
-      table.string('lastName');
-      table.string('middleName');
-      table.string('parents');
-      table.string('born');
-      table.string('died');
-      table.string('school');
-      table.string('house');
-      table.string('patronus');
-      table.string('bloodStatus');
-      table.string('imageUrl');
-    })
-  ]);
+exports.up = (knex) => {
+  return knex.schema.createTable('characters', (table) => {
+    table.increments('id');
+    table.string('firstName');
+    table.string('lastName');
+    table.string('middleName');
+    table.string('parents');
+    table.string('born');
+    table.string('died');
+    table.string('school');
+    table.string('house');
+    table.string('patronous');
+    table.string('bloodStatus');
+    table.string('imageUrl');
+    table.timestamps(true, true);
+  });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = (knex) => {
   return knex.schema.dropTable('characters');
 };
