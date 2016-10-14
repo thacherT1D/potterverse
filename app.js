@@ -8,7 +8,6 @@ if (process.env.NODE_ENV !== 'production') {
 var express = require('express');
 var app = express();
 var handlebars = require('handlebars');
-// var methodOverride = require('method-override');
 
 app.disable('x-powered-by');
 
@@ -38,7 +37,6 @@ app.set('view engine', 'hbs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(methodOverride('_method'));
 
 var routes = require('./routes/index');
 var characters = require('./routes/characters');
