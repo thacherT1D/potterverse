@@ -7,7 +7,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 var express = require('express');
 var app = express();
-var handlebars = require('handlebars');
 
 app.disable('x-powered-by');
 

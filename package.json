@@ -18,7 +18,6 @@
     "eslint-config-ryansobol": "^9.1.1",
     "express": "~4.13.4",
     "foreman": "^2.0.0",
-    "handlebars": "^4.0.5",
     "hbs": "^4.0.0",
     "jade": "~1.11.0",
     "knex": "^0.11.10",
