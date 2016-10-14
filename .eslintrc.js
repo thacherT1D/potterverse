@@ -1,7 +1,6 @@
 module.exports = {
   extends: [
     'ryansobol/es6',
-    'ryansobol/mocha',
     'ryansobol/node'
   ],
   rules: {
@@ -12,6 +11,7 @@ module.exports = {
     'new-cap':'off',
     'lines-around-comment':'off',
     'no-unused-vars':'off',
-    'next-line': 'off'
+    'next-line': 'off',
+    'strict': 'off'
   }
 };
