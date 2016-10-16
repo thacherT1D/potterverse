@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
+<head>
+  <title>Potterverse API</title>
 
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- <link rel='stylesheet' href='../style.css'/> -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
+<body>
+  <div class="navbar-fixed">
+    <nav class="blue-grey darken-2">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Welcome to the Potterverse API</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container-fluid" style='width:100%'>
+    {{{body}}}
+  </div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script type="text/javascript" href="../js/handlebars"></script>
-
-  </head>
-
-  <body>
-    <div class="navbar-fixed">
-      <nav class="blue-grey darken-2">
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Potterverse API</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="/characters">Characters</a></li>
-            <li><a href="/data">Data</a></li>
-            <li><a href="/characters/new">Add New Character</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="/">Home</a></li>
-            <li><a href="/characters">Characters</a></li>
-            <li><a href="/data">Data</a></li>
-            <li><a href="/characters/new">Add New Character</a></li>
-          </ul>
-        </div>
-      </nav>
+  <footer class="page-footer blue-grey darken-2">
+    <div class="footer-copyright">
+      <div class="container">
+        © 2016 Thacher
+      </div>
     </div>
-    <div class="container-fluid" style='width:100%'>
-      {{{body}}}
-    </div>
+  </footer>
 
-    <script src="//code.jquery.com/jquery-latest.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script>
-     $(".button-collapse").sideNav();
-    </script>
-    <script>
-      $('select').material_select();
-    </script>
-
-
-  </body>
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
+</body>
 </html>

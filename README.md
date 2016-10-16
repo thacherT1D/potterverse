@@ -1,22 +1,21 @@
-An API for the Potterverse
+####An API for the Potterverse
+
+Basic API for Harry Potter related information. Built with Node, Express, and Postgres - also using knex.js for routing and handlebars and materialize css for the basic front-end. Written in and linted for ES6.
 
   ***Available Endpoints:***
-    /data/characters_detailed
-    /data/characters_detailed/:id
-    /data/characters_basic
-    /data/characters_basic/:id
-    /data/hogwarts_houses
-    /data/hogwarts_houses/:id
-    /data/hogwarts_staff
-    /data/hogwarts_staff/:id
-    /data/wizarding_schools/
-    /data/wizarding_schools/:id
+  - /data/characters_detailed
+  - /data/characters_detailed/:id
+  - /data/characters_basic
+  - /data/characters_basic/:id
+  - /data/hogwarts_houses
+  - /data/hogwarts_houses/:id
+  - /data/hogwarts_staff
+  - /data/hogwarts_staff/:id
+  - /data/wizarding_schools/
+  - /data/wizarding_schools/:id
 
 https://potterverse.herokuapp.com/ | https://git.heroku.com/potterverse.git
 
-Basic API for Harry Potter related information. Built with Node, Express, and Postgres - also using knex.js for routing and handlebars and materialize css for the basic front-end.
-
-Written in and linted for ES6.
 
 Next Features:
 - More detailed error messages (possibly using Boom)
