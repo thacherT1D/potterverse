@@ -11,7 +11,7 @@ exports.seed = function(knex) {
       },
       {
         "id": 2 ,
-        "position": "Tranfiguration Professor",
+        "position": "Transfiguration Professor",
         "name": "Minerva McGonnagal",
         "characters_basic_id": 10
       },
