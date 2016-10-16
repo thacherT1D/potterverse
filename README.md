@@ -1,6 +1,5 @@
 An API for the Potterverse
 
-
   ***Available Endpoints:***
     /data/characters_detailed
     /data/characters_detailed/:id
@@ -13,8 +12,11 @@ An API for the Potterverse
     /data/wizarding_schools/
     /data/wizarding_schools/:id
 
-
 https://potterverse.herokuapp.com/ | https://git.heroku.com/potterverse.git
+
+Basic API for Harry Potter related information. Built with Node, Express, and Postgres - also using knex.js for routing and handlebars and materialize css for the basic front-end.
+
+Written in and linted for ES6.
 
 Next Features:
 - More detailed error messages (possibly using Boom)
