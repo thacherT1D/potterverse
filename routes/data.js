@@ -32,4 +32,16 @@ router.get('/data/characters/:id', (req, res, next) => {
     });
 });
 
+router.get('/data/hogwartsHouses', (req, res, next) => {
+  knex('hogwartsHouses')
+    .select().then((results) => {
+      const hogwartsHousesResults = {hogwartsHouses: results};
+      const jsonHogwartsHousesResults = JSON.stringify(hogwartsHousesResults);
+      res.send(jsonHogwartsHousesResults);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 module.exports = router;
