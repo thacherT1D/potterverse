@@ -49,6 +49,7 @@ app.use((err, _req, res, _next) => {
       .set('Content-Type', 'text/plain')
       .send(err.message);
   }
+
   // console.error(JSON.stringify(err, null, 2));
   // if(err.status) {
   //   return res
@@ -56,6 +57,7 @@ app.use((err, _req, res, _next) => {
   //     .set('Content-Type', 'text/plain')
   //     .send(err.statusText)
   // }
+
   console.error(err.stack);
   res.sendStatus(500);
 });
