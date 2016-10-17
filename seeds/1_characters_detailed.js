@@ -155,7 +155,7 @@ exports.seed = function(knex) {
         "house": "Slytherin",
         "patronous": "Doe",
         "blood_status": "Half-blood",
-        "image_url": "http://i.imgur.com/sjgazI7.jpg"
+        "image_url": "http://i.imgur.com/ce1ucKq.jpg"
       }
     ]);
   });
