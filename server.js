@@ -43,7 +43,7 @@ app.use((_req, res) => {
 });
 
 app.use((err, _req, res, _next) => {
-  if(err.output && err.output.statusCode) {
+  if (err.output && err.output.statusCode) {
     return res
       .status(err.output.statusCode)
       .set('Content-Type', 'text/plain')
@@ -65,7 +65,7 @@ app.use((err, _req, res, _next) => {
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-  if(app.get('env') !== 'test') {
+  if (app.get('env') !== 'test') {
     console.log('Listening on port', port);
   }
 });
