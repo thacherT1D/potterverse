@@ -7,7 +7,7 @@
     "knex": "knex",
     "lint": "eslint .",
     "nf": "nf start",
-    "start": "nodemon app.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
