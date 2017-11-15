@@ -1,4 +1,4 @@
-####An API for the Potterverse
+#### An API for the Potterverse
 
 Basic API for Harry Potter related information. Built with Node, Express, and Postgres - also using knex.js for routing and handlebars and materialize css for the basic front-end. Written in and linted for ES6.
 
