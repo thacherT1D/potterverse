@@ -20,3 +20,15 @@ https://potterverse.herokuapp.com/ | https://git.heroku.com/potterverse.git
 Next Features:
 - More detailed error messages (possibly using Boom)
 - Add more detail to postgres table relations to enable more specific calls, ex. pulling data on a single character from multiple tables
+
+
+07 May 2019: Upgraded to heroku-18
+`$ git clone https://github.com/thacherT1D/potterverse.git`
+`$ cd potterverse`
+`$ heroku git:remote -a potterverse`
+`$ git pull heroku master`
+`$ heroku stack:set heroku-18 -a potterverse`
+`$ git commit --allow-empty -m "Upgrading to heroku-18"`
+`$ git push heroku master`
+
+To check upgrade from project directory: `$ heroku stack`
