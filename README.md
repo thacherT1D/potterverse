@@ -26,12 +26,19 @@ Additional features determined by the testing needs of the projects using it (ex
 
 
 07 May 2019: Upgraded to heroku-18
+
 `$ git clone https://github.com/thacherT1D/potterverse.git`
+
 `$ cd potterverse`
+
 `$ heroku git:remote -a potterverse`
+
 `$ git pull heroku master`
+
 `$ heroku stack:set heroku-18 -a potterverse`
+
 `$ git commit --allow-empty -m "Upgrading to heroku-18"`
+
 `$ git push heroku master`
 
 To check upgrade from project directory: `$ heroku stack`
