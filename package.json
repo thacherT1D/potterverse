@@ -16,7 +16,7 @@
     "eslint": "^3.7.1",
     "eslint-config-ryansobol": "^9.1.1",
     "express": "~4.13.4",
-    "foreman": "^2.0.0",
+    "foreman": "^3.0.1",
     "hbs": "^4.0.0",
     "jade": "~1.11.0",
     "knex": "^0.20.1",
